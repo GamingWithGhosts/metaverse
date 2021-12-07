@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MetaVerse | GwG</title>
+	<meta name="description" content="Metaverse | GwG">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+
+    <!-- <style>
+        model-viewer#reveal {
+          --poster-color: transparent;
+        }
+      </style> -->
+
+</head>
+
+<body>
+
+    <a-scene>
+        <a-assets>
+            <img id="nft-1" src="./assets/nft-game-demo.jpg">
+            <img id="nft-2" src="./assets/nft-game-2.jpg">
+            <img id="previewEgypt" src="">
+            <img id="previewForest" src="">
+            <img id="previewArches" src="">
+            <img id="previewJapan" src="">
+            <img id="sky" src="./assets/sky.jpg">
+            <img id="floor" src="./assets/floor.jpg">
+            <img id="floor-NRM" src="./assets/floor.jpg">
+            <img id="drone" src="./assets/Drone1.png">
+            <a-asset-item id="monitor_obj" src="./assets/monitor.obj"></a-asset-item>
+            <a-asset-item id="monitor_mtl" src="./assets/monitor.mtl"></a-asset-item>
+            <a-asset-item id="aircraft_obj" src="./assets/aircraft.obj"></a-asset-item>
+            <a-asset-item id="aircraft_mtl" src="./assets/aircraft.mtl"></a-asset-item>
+            <a-asset-item id="houses_obj" src="./assets/houses.obj"></a-asset-item>
+            <a-asset-item id="houses_mtl" src="./assets/houses.mtl"></a-asset-item>
+        </a-assets>
+
+        <a-sky src="#sky"></a-sky>
+
+        <a-plane material="color: #FFFFFF; src: #floor; repeat: 5000 5000; shader:flat; normal-map: #floor-NRM; 
+        normal-texture-repeat: 1 1" rotation="-90 0 0" scale="1000 1000 1"></a-plane>
+
+        <a-link	position="0 0 -4" href="#" title="NFT #1" image="#nft-1" scale="4 4 4"></a-link>
+
+        <a-link position="-8 2 -5" rotation="0 20 0" href="#" title="NFT #2" image="#nft-2"></a-link>
+
+        <a-link position="8 2 -5" href="#" title="NFT #3" image="#previewForest"></a-link>
+
+        <!-- <a-link position="12 2 -5" rotation="0 -20 0" href="#" title="NFT-4" image="#previewArches"></a-link>
+        <a-link position="18 2 -4" rotation="0 -40 0" href="#" title="NFT-5" image="#previewJapan"></a-link> -->
+
+        <a-image src="#drone" position="2 15 -30" height="10" width="10"></a-image>
+
+        <a-entity obj-model="obj:#monitor_obj; mtl:#monitor_mtl" position="40 0 -30" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#monitor_obj; mtl:#monitor_mtl" position="-40 0 -30" scale="5 5 5"></a-entity>
+
+        <!-- <a-entity obj-model="obj:#houses_obj; mtl:#houses_mtl" position="60 0 -50" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#houses_obj; mtl:#houses_mtl" position="-60 0 -50" scale="5 5 5"></a-entity> -->
+
+        <a-entity obj-model="obj:#aircraft_obj; mtl:#aircraft_mtl" position="30 0 20" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj:#aircraft_obj; mtl:#aircraft_mtl" position="-30 0 20" scale="5 5 5"></a-entity>
+        
+        <a-entity id="river" geometry="primitive: plane" material="color: blue"
+        position="-10 0 0" sound="src: url(./assets/music/scifi/Theremin_Swoop_15.wav); autoplay: true"></a-entity>
+
+        <a-entity id="slow" geometry="primitive: box" material="src: url(./assets/Drone1.png)"
+        position="10 0 0" sound="src: url(./assets/music/scifi/Season01_Synth_12(110BPM).wav); on: click"></a-entity>
+
+        <a-entity id="fast" geometry="primitive: sphere" material="src: url(./assets/Drone1.png)"
+        position="0 0 0" sound="src: url(./assets/music/scifi/Season01_Synth_20(110BPM).wav); on: click"></a-entity>
+        
+        <a-entity position="1 0 8">
+            <a-camera user-height="1">
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+
+        <!-- <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="shared-assets/models/NeilArmstrong.glb" ar ar-modes="webxr scene-viewer quick-look" environment-image="shared-assets/environments/moon_1k.hdr" poster="shared-assets/models/NeilArmstrong.webp" seamless-poster shadow-intensity="1" camera-controls></model-viewer> -->
+
+    </a-scene>
+
+</body>
+</html>
